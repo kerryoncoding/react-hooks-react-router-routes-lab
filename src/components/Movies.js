@@ -2,7 +2,31 @@ import React from "react";
 import { movies } from "../data";
 
 function Movies() {
-  return <div>{/*{code here}*/}</div>;
+  console.log(movies)
+
+  let movieList = movies.map((item) => {
+    let list = item.genres.map((genre) => {
+      return (
+        <li>
+          {genre}
+        </li>
+      )
+    })
+
+    return(
+      <div>
+        <h2>Name: {item.title}</h2>
+        <p>Time: {item.time}</p>
+        <p>Movies:</p>
+        <ul>
+          {list}
+        </ul>
+      </div>
+    )
+  })
+
+  return <div>{movieList}</div>;
 }
+
 
 export default Movies;
