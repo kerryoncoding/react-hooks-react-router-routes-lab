@@ -7,26 +7,25 @@ function Directors() {
   let list = directors.map((item) => {
     let movieList = item.movies.map((movie) => {
       return (
-        <li>
-          {movie}
-        </li>
+        <li>{movie}</li>
       )
     })
 
     return(
       <div>
-      <h1>Name: {item.name}</h1>
+      <h2>Name: {item.name}</h2>
       <p>Movies:</p>
-      <ul>
-        {movieList}
-      </ul>
+      <ul>{movieList}</ul>
       </div>
     )
 
 
   })
 
-  return <div>{list}</div>;
+  return (<div>
+    <h1>Directors Page</h1>
+    {list}
+    </div>);
 }
 
 export default Directors;

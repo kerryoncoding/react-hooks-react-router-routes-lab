@@ -17,7 +17,7 @@ function Movies() {
       <div>
         <h2>Name: {item.title}</h2>
         <p>Time: {item.time}</p>
-        <p>Movies:</p>
+        <p>Genres:</p>
         <ul>
           {list}
         </ul>
@@ -25,7 +25,12 @@ function Movies() {
     )
   })
 
-  return <div>{movieList}</div>;
+  return (
+  <div>
+    <h1>Moives Page</h1>
+    {movieList}
+  </div>
+  );
 }
 
 
