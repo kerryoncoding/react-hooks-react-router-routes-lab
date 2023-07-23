@@ -2,19 +2,19 @@ import React from "react";
 import { movies } from "../data";
 
 function Movies() {
-  console.log(movies)
+  // console.log(movies)
 
   let movieList = movies.map((item) => {
     let list = item.genres.map((genre) => {
       return (
-        <li>
+        <li key={genre}>
           {genre}
         </li>
       )
     })
 
     return(
-      <div>
+      <div key={item.title}>
         <h2>Name: {item.title}</h2>
         <p>Time: {item.time}</p>
         <p>Genres:</p>
@@ -27,7 +27,7 @@ function Movies() {
 
   return (
   <div>
-    <h1>Moives Page</h1>
+    <h1>Movies Page</h1>
     {movieList}
   </div>
   );

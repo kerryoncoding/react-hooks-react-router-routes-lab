@@ -3,17 +3,18 @@ import { actors } from "../data";
 
 function Actors() {
 
-  console.log(actors)
+  // console.log(actors)
 
   let list = actors.map((item) => {
     let movieList = item.movies.map((movie) => {
       return (
-        <li>{movie}</li>
+        <li key={movie}>{movie}</li>
+        
       )
     })
 
     return(
-      <div>
+      <div key={item.name}>
         <h2>Name: {item.name}</h2>
         <p>Movies:</p>
         <ul>{movieList}</ul>
@@ -24,10 +25,10 @@ function Actors() {
   })
 
   return (
-  <div>
+  <>
     <h1>Actors Page</h1>
     {list}
-  </div>
+  </>
   );
 }
 
